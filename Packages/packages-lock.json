@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "33135342e868201eb0d4cef821ecab90caca373e"
     },
+    "com.redbluegames.mulligan": {
+      "version": "https://github.com/redbluegames/unity-mulligan-renamer.git?path=/Assets/RedBlueGames/MulliganRenamer",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "2571f2e28250162410b8b6c28f2ffde724391cf1"
+    },
     "com.unity.2d.animation": {
       "version": "10.1.3",
       "depth": 1,
