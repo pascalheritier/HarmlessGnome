@@ -2,8 +2,7 @@
 {
     internal class Player
     {
-        public const string TransitionMovingUp = "moving-up";
-        public const string TransitionMovingDown = "moving-down";
-        public const string TransitionMovingSideways = "moving-sideways";
+        public const string TransitionMoving = "moving";
+        public const string TransitionMovingDirection = "moving-direction";
     }
 }

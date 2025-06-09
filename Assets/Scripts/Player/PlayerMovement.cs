@@ -11,8 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator playerAnimator;
     private Rigidbody2D playerBody;
     private bool playerControlsEnabled = true;
-    private float horizontalInput;
-    private float verticalInput;
+    private Vector2 motionDirection;
 
     private void Awake()
     {
@@ -37,13 +36,13 @@ public class PlayerMovement : MonoBehaviour
         Vector2 playerInput = context.ReadValue<Vector2>();
         if (playerInput.x != 0)
         {
-            horizontalInput = playerInput.x;
-            verticalInput = 0;
+            motionDirection.x = playerInput.x;
+            motionDirection.y = 0;
         }
         else if (playerInput.y != 0)
         {
-            horizontalInput = 0;
-            verticalInput = playerInput.y;
+            motionDirection.x = 0;
+            motionDirection.y = playerInput.y;
         }
         else
         {
@@ -53,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopMoving()
     {
-        horizontalInput = verticalInput = 0;
+        motionDirection = Vector2.zero;
     }
 
     private void Update()
@@ -65,33 +64,26 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateRunningBehaviour()
     {
         // Actual movement
-        playerBody.linearVelocity = new Vector2(horizontalInput * runSpeed, verticalInput * runSpeed);
+        playerBody.linearVelocity = new Vector2(motionDirection.x * runSpeed, motionDirection.y * runSpeed);
 
         // Visual animations
-        ResetMotionAnimation();
-        if (horizontalInput != 0)
+        playerAnimator.SetBool(AnimationConstants.Player.TransitionMoving, motionDirection.magnitude > 0);
+        if (motionDirection.x != 0)
         {
-            playerAnimator.SetBool(AnimationConstants.Player.TransitionMovingSideways, true);
+            playerAnimator.SetInteger(AnimationConstants.Player.TransitionMovingDirection, 1);
             // flip sprite left-right
-            if (horizontalInput > 0)
+            if (motionDirection.x > 0)
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             else
                 transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
-        else if (verticalInput > 0)
+        else if (motionDirection.y > 0)
         {
-            playerAnimator.SetBool(AnimationConstants.Player.TransitionMovingUp, true);
+            playerAnimator.SetInteger(AnimationConstants.Player.TransitionMovingDirection, 2);
         }
-        else if (verticalInput < 0)
+        else if (motionDirection.y < 0)
         {
-            playerAnimator.SetBool(AnimationConstants.Player.TransitionMovingDown, true);
+            playerAnimator.SetInteger(AnimationConstants.Player.TransitionMovingDirection, 0);
         }
-    }
-
-    private void ResetMotionAnimation()
-    {
-        playerAnimator.SetBool(AnimationConstants.Player.TransitionMovingSideways, false);
-        playerAnimator.SetBool(AnimationConstants.Player.TransitionMovingUp, false);
-        playerAnimator.SetBool(AnimationConstants.Player.TransitionMovingDown, false);
     }
 }
