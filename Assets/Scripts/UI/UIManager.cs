@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
     private PlayerInput playerInput;
     private PlayerAttack playerAttack;
     private PlayerMovement playerMovement;
+    private LevelTimer levelTimer;
 
     #endregion
 
@@ -44,6 +45,7 @@ public class UIManager : MonoBehaviour
         playerInput = FindAnyObjectByType<PlayerInput>();
         playerAttack = FindAnyObjectByType<PlayerAttack>();
         playerMovement = FindAnyObjectByType<PlayerMovement>();
+        levelTimer = FindAnyObjectByType<LevelTimer>();
         gameOverScreen.SetActive(false);
         pauseScreen.SetActive(false);
         ShowGameEnd(false);
@@ -165,6 +167,8 @@ public class UIManager : MonoBehaviour
                 playerAttack.enabled = false;
             if (playerMovement != null)
                 playerMovement.enabled = false;
+            if (levelTimer != null)
+                levelTimer.enabled = false;
         }
         else
         {
@@ -174,6 +178,8 @@ public class UIManager : MonoBehaviour
                 playerAttack.enabled = true;
             if (playerMovement != null)
                 playerMovement.enabled = true;
+            if (levelTimer != null)
+                levelTimer.enabled = true;
         }
     }
 

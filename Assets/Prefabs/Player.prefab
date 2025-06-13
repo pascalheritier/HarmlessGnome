@@ -13,13 +13,14 @@ GameObject:
   - component: {fileID: 1757092135253407872}
   - component: {fileID: 7066617092557825006}
   - component: {fileID: 1619778748420410119}
-  - component: {fileID: 9078065362700000155}
   - component: {fileID: 5033700877649067144}
   - component: {fileID: 6605980540482639523}
   - component: {fileID: 8911189205571976949}
+  - component: {fileID: 9078065362700000155}
+  - component: {fileID: 8490473835796958614}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,19 +200,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &9078065362700000155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4683260644411124993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ed6eccea2d60f74ebaeecc9a4c00019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runSpeed: 5
 --- !u!95 &5033700877649067144
 Animator:
   serializedVersion: 7
@@ -291,3 +279,29 @@ MonoBehaviour:
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
+--- !u!114 &9078065362700000155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4683260644411124993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed6eccea2d60f74ebaeecc9a4c00019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 5
+--- !u!114 &8490473835796958614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4683260644411124993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e3ea9aaeb93a344a6d227bb6b3235d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  victorySound: {fileID: 8300000, guid: f51ed63ce09f7fe4a8b7ef51e81f1290, type: 3}

@@ -15,6 +15,21 @@ public class LevelTimer : MonoBehaviour
     private TimeSpan timerDuration;
     private TimeSpan timerCountDown;
     private UIManager uiManager;
+    private bool isEnabled = false;
+
+    private void OnEnable()
+    {
+        isEnabled = true;
+        if(stopWatch != null && !stopWatch.IsRunning)
+            stopWatch.Start();
+    }
+
+    private void OnDisable()
+    {
+        isEnabled = false;
+        if (stopWatch != null && stopWatch.IsRunning)
+            stopWatch.Stop();
+    }
 
     private void Awake()
     {
@@ -26,6 +41,9 @@ public class LevelTimer : MonoBehaviour
 
     private void Update()
     {
+        if (!isEnabled)
+            return;
+
         if (timerCountDown.Seconds == 0)
         {
             if (stopWatch.IsRunning)

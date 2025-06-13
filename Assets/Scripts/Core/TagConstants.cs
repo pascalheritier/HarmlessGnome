@@ -7,4 +7,5 @@
     public const string TagStartPoint = "StartPoint";
     public const string TagCheckPoint = "CheckPoint";
     public const string TagVictoryPoint = "VictoryPoint";
+    public const string TagToolCollectible = "ToolCollectible";
 }
