@@ -30,7 +30,8 @@ public class LevelTimer : MonoBehaviour
         {
             if (stopWatch.IsRunning)
                 stopWatch.Stop();
-            uiManager.ShowGameOver();
+            if(!uiManager.IsGameOverScreenShowing())
+                uiManager.ShowGameOver();
             return;
         }
         timerCountDown = timerDuration.Subtract(TimeSpan.FromMilliseconds(stopWatch.ElapsedMilliseconds));

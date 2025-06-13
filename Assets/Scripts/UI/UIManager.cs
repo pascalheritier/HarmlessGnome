@@ -90,6 +90,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowGameOver()
     {
+        this.PauseGame(true);
         SoundManager.Instance.PlaySound(gameOverSound);
         gameOverScreen.SetActive(true);
     }
