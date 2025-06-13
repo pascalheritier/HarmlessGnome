@@ -171,7 +171,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -614.8275, y: -16.43908, z: -604.76685, w: -15.596374}
+  m_margin: {x: -678.9879, y: -16.43908, z: -653.44037, w: -15.596374}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2752a9dbcdc9b4f924e89c7c507e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: 'SOUND EFFECT: '
+  Title: 'Sound effects: '
 --- !u!1 &725061755938678627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,7 +2116,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -380.31003, y: -16.43908, z: -352.54956, w: -15.596374}
+  m_margin: {x: -608.1902, y: -16.43908, z: -558.30566, w: -15.596374}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2190,7 +2190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2752a9dbcdc9b4f924e89c7c507e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: 'SOUND EFFECT: '
+  Title: 'Sound effects: '
 --- !u!1 &3785723736664357176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2333,7 +2333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Music volume
+  m_text: Music
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1a8894e4be93b74bae0f730624bd22f, type: 2}
   m_sharedMaterial: {fileID: -4260095946792339709, guid: c1a8894e4be93b74bae0f730624bd22f,
@@ -2473,7 +2473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc246fd9cf59b41919901c7a2f9f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: 'MUSIC: '
+  Title: 'Music: '
 --- !u!1 &4050963351012101301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,7 +2735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Music volume
+  m_text: Music
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1a8894e4be93b74bae0f730624bd22f, type: 2}
   m_sharedMaterial: {fileID: -4260095946792339709, guid: c1a8894e4be93b74bae0f730624bd22f,
@@ -2875,7 +2875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc246fd9cf59b41919901c7a2f9f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: 'MUSIC: '
+  Title: 'Music: '
 --- !u!1 &4339854323640187003
 GameObject:
   m_ObjectHideFlags: 0
