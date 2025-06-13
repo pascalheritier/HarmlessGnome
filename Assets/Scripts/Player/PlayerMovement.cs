@@ -22,9 +22,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (context.action.name == InputActionConstants.Player.InputActionMove)
                 OnMove(context);
-
-            if(context.action.name == InputActionConstants.UI.InputActionCancel)
-                Debug.Log($"Player input: {context.action.name}");
         };
     }
 
