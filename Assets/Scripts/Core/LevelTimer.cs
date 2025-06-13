@@ -14,9 +14,11 @@ public class LevelTimer : MonoBehaviour
     private Stopwatch stopWatch;
     private TimeSpan timerDuration;
     private TimeSpan timerCountDown;
+    private UIManager uiManager;
 
     private void Awake()
     {
+        uiManager = FindAnyObjectByType<UIManager>();
         timerDuration = TimeSpan.FromMilliseconds(timerSeconds * 1000);
         timerCountDown = new TimeSpan(timerDuration.Ticks);
         stopWatch = Stopwatch.StartNew();
@@ -28,6 +30,7 @@ public class LevelTimer : MonoBehaviour
         {
             if (stopWatch.IsRunning)
                 stopWatch.Stop();
+            uiManager.ShowGameOver();
             return;
         }
         timerCountDown = timerDuration.Subtract(TimeSpan.FromMilliseconds(stopWatch.ElapsedMilliseconds));
