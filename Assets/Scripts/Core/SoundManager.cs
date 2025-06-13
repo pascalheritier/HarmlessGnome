@@ -30,7 +30,8 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(AudioClip audioClip)
     {
-        soundEffectSource.PlayOneShot(audioClip);
+        if(audioClip != null)
+            soundEffectSource.PlayOneShot(audioClip);
     }
 
     public bool IsAudioSourcePlaying()
