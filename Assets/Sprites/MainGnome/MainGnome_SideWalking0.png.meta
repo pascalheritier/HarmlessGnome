@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MainGnome_SideWalking0_0: -279875211185247385
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

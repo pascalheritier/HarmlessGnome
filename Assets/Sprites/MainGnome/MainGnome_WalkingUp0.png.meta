@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MainGnome_WalkingUp0_0: 9036764661148294436
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

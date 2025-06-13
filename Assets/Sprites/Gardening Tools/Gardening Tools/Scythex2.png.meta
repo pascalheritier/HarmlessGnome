@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Scythex2_0: 7029455847079162184
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
