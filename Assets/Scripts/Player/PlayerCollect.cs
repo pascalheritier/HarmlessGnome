@@ -27,7 +27,7 @@ public class PlayerCollect : MonoBehaviour
     }
     private IEnumerator ShowGameEnding()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0);
         uIManager.ShowGameEnd(true);
     }
 }
