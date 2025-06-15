@@ -20,8 +20,8 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue(string[] dialogueInput)
     {
-        gameObject.SetActive(true);
         dialogueTextLines = dialogueInput;
+        gameObject.SetActive(true);
     }
 
     private void Awake()
@@ -30,16 +30,19 @@ public class DialogueManager : MonoBehaviour
         playerInput = FindAnyObjectByType<PlayerInput>();
         playerInput.onActionTriggered += (context) =>
         {
-            if (uiManager.IsPauseScreenShowing() || uiManager.IsGameOverScreenShowing())
-                return;
-
             if (context.action.name == InputActionConstants.UI.InputActionSubmit)
+            {
+                if (uiManager.IsPauseScreenShowing() || uiManager.IsGameOverScreenShowing())
+                    return; // do not submit when outside of dialogue box context
+
                 OnSubmit(context);
+            }
         };
     }
 
-    private void Start()
+    private void OnEnable()
     {
+        Debug.Log("Dialogue box is pausing game");
         uiManager.PauseGame(true);
         dialogueUiComponent.text = string.Empty;
         StartDialogue();
@@ -87,6 +90,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            Debug.Log("Dialogue box is unpausing game");
             uiManager.PauseGame(false);
         }
     }

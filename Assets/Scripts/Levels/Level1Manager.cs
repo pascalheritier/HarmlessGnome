@@ -9,7 +9,8 @@ public class Level1Manager : MonoBehaviour
     [SerializeField]
     private AudioClip victorySound;
 
-    private UIManager uIManager;
+    private UIManager uiManager;
+    DialogueManager dialogueManager;
     private LevelTimer levelTimer;
     private PlayerCollect playerCollect;
 
@@ -22,10 +23,14 @@ public class Level1Manager : MonoBehaviour
 
     private void Awake()
     {
-        uIManager = FindFirstObjectByType<UIManager>();
+        uiManager = FindFirstObjectByType<UIManager>();
         levelTimer = FindFirstObjectByType<LevelTimer>();
         playerCollect = FindFirstObjectByType<PlayerCollect>();
-        DialogueManager dialogueManager = FindFirstObjectByType<DialogueManager>(FindObjectsInactive.Include);
+        dialogueManager = FindFirstObjectByType<DialogueManager>(FindObjectsInactive.Include);
+    }
+
+    private void Start()
+    {
         dialogueManager.ShowDialogue(level1StartDialogue);
     }
 
@@ -42,6 +47,6 @@ public class Level1Manager : MonoBehaviour
     private IEnumerator ShowGameEnding()
     {
         yield return new WaitForSeconds(0);
-        uIManager.ShowGameEnd(true);
+        uiManager.ShowGameEnd(true);
     }
 }

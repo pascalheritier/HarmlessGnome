@@ -7,6 +7,12 @@ public class PlayerCollect : MonoBehaviour
     private AudioClip itemPickupSound;
 
     private int toolCollectibleCounter;
+    DialogueManager dialogueManager;
+
+    private void Awake()
+    {
+        dialogueManager = FindFirstObjectByType<DialogueManager>(FindObjectsInactive.Include);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,6 +20,8 @@ public class PlayerCollect : MonoBehaviour
         {
             toolCollectibleCounter++;
             SoundManager.Instance.PlaySound(itemPickupSound);
+            var toolCollectible = collision.GetComponent<ToolCollectible>();
+            dialogueManager.ShowDialogue(new string[] { toolCollectible.OnCollectedText });
             collision.gameObject.SetActive(false);
         }
     }

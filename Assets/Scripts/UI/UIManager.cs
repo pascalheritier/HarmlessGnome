@@ -42,13 +42,15 @@ public class UIManager : MonoBehaviour
     #region Init
     private void Awake()
     {
+        gameOverScreen.SetActive(false);
+        pauseScreen.SetActive(false);
+        gameEndScreen.SetActive(false);
+
         playerInput = FindAnyObjectByType<PlayerInput>();
         playerAttack = FindAnyObjectByType<PlayerAttack>();
         playerMovement = FindAnyObjectByType<PlayerMovement>();
         levelTimer = FindAnyObjectByType<LevelTimer>();
-        gameOverScreen.SetActive(false);
-        pauseScreen.SetActive(false);
-        ShowGameEnd(false);
+
         playerInput.onActionTriggered += (context) =>
         {
             if (context.action.name == InputActionConstants.UI.InputActionCancel)
@@ -92,6 +94,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowGameOver()
     {
+        Debug.Log($"Show game over screen pausing game");
         this.PauseGame(true);
         SoundManager.Instance.PlaySound(gameOverSound);
         gameOverScreen.SetActive(true);
@@ -103,8 +106,11 @@ public class UIManager : MonoBehaviour
 
     public void ShowPauseScreen(bool enabled)
     {
-        if(!IsDialogeBoxShowing())
+        if (!IsDialogeBoxShowing())
+        {
+            Debug.Log($"Show pause screen pausing game: {enabled}");
             PauseGame(enabled); // will be unpaused when dialogue is closed
+        }
         pauseScreen.SetActive(enabled);
     }
 
@@ -124,9 +130,10 @@ public class UIManager : MonoBehaviour
 
     public void ShowGameEnd(bool enabled)
     {
+        Debug.Log($"Show game end pausing game: {enabled}");
         PauseGame(enabled);
         gameEndScreen.SetActive(enabled);
-    } 
+    }
 
     #endregion
 
@@ -154,12 +161,13 @@ public class UIManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false; // exits play mode in editor
 #endif
-    } 
+    }
 
     public void PauseGame(bool enabled)
     {
         if (enabled)
         {
+            Debug.Log("Game is paused");
             Time.timeScale = 0.0f;
 
             // make sure no animation can take place while on pause
@@ -172,6 +180,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("Game is unpaused");
             Time.timeScale = 1.0f;
 
             if (playerAttack != null)
