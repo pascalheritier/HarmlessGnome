@@ -14,8 +14,9 @@ public class LevelTimer : MonoBehaviour
     private Stopwatch stopWatch;
     private TimeSpan timerDuration;
     private TimeSpan timerCountDown;
-    private UIManager uiManager;
     private bool isEnabled = false;
+    
+    public bool IsTimeUp { get; private set; }
 
     private void OnEnable()
     {
@@ -33,7 +34,6 @@ public class LevelTimer : MonoBehaviour
 
     private void Awake()
     {
-        uiManager = FindAnyObjectByType<UIManager>();
         timerDuration = TimeSpan.FromMilliseconds(timerSeconds * 1000);
         timerCountDown = new TimeSpan(timerDuration.Ticks);
         stopWatch = Stopwatch.StartNew();
@@ -41,15 +41,14 @@ public class LevelTimer : MonoBehaviour
 
     private void Update()
     {
-        if (!isEnabled)
+        if (!isEnabled || IsTimeUp)
             return;
 
         if (timerCountDown.Seconds == 0)
         {
             if (stopWatch.IsRunning)
                 stopWatch.Stop();
-            if(!uiManager.IsGameOverScreenShowing())
-                uiManager.ShowGameOver();
+            IsTimeUp = true;
             return;
         }
         timerCountDown = timerDuration.Subtract(TimeSpan.FromMilliseconds(stopWatch.ElapsedMilliseconds));

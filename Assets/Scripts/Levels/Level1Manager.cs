@@ -36,11 +36,18 @@ public class Level1Manager : MonoBehaviour
 
     private void Update()
     {
-        if(playerCollect.GetCurrentToolCollectibleCount() == totalLevelToolCollectibleCount)
+        if (playerCollect.GetCurrentToolCollectibleCount() == totalLevelToolCollectibleCount)
         {
+            if (uiManager.IsDialogeBoxShowing())
+                return; // wait until dialogbox is closed to show other screens
             levelTimer.enabled = false;
             SoundManager.Instance.PlaySound(victorySound);
             StartCoroutine(ShowGameEnding());
+        }
+        else if (levelTimer.IsTimeUp)
+        {
+            if (!uiManager.IsGameOverScreenShowing())
+                uiManager.ShowGameOver();
         }
     }
 
