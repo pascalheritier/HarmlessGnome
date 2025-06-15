@@ -25,6 +25,7 @@ public class CameraController : MonoBehaviour
 
     public void MoveToNewZone(Transform newZone)
     {
-        currentPosition = newZone.position;
+        if(newZone != null)
+            currentPosition = newZone.position;
     }
 }
