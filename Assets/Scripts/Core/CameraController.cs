@@ -4,7 +4,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private bool followPlayer;
     [SerializeField] private float speed;
-    private float currentPositionX;
+    private Vector2 currentPosition;
     private Vector3 velocity = Vector3.zero;
 
     [SerializeField] private Transform playerTransform;
@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
     public void Update()
     {
         if (!followPlayer)
-            transform.position = Vector3.SmoothDamp(transform.position, new Vector3(currentPositionX, transform.position.y, transform.position.z), ref velocity, speed);
+            transform.position = Vector3.SmoothDamp(transform.position, new Vector3(currentPosition.x, currentPosition.y, transform.position.z), ref velocity, speed);
         else
         {
             transform.position = new Vector3(playerTransform.position.x + lookAhead, transform.position.y, transform.position.z);
@@ -23,8 +23,8 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public void MoveToNewRoom(Transform newRoom)
+    public void MoveToNewZone(Transform newZone)
     {
-        currentPositionX = newRoom.position.x;
+        currentPosition = newZone.position;
     }
 }
