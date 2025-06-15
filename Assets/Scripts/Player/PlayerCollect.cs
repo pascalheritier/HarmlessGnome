@@ -4,30 +4,19 @@ using UnityEngine;
 public class PlayerCollect : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip victorySound;
+    private AudioClip itemPickupSound;
 
-    private UIManager uIManager;
-    private LevelTimer levelTimer;
-
-    private void Awake()
-    {
-        uIManager = FindFirstObjectByType<UIManager>();
-        levelTimer = FindFirstObjectByType<LevelTimer>();
-    }
+    private int toolCollectibleCounter;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == TagConstants.TagToolCollectible)
         {
-            levelTimer.enabled = false;
-            SoundManager.Instance.PlaySound(victorySound);
+            toolCollectibleCounter++;
+            SoundManager.Instance.PlaySound(itemPickupSound);
             collision.gameObject.SetActive(false);
-            StartCoroutine(ShowGameEnding());
         }
     }
-    private IEnumerator ShowGameEnding()
-    {
-        yield return new WaitForSeconds(0);
-        uIManager.ShowGameEnd(true);
-    }
+
+    public int GetCurrentToolCollectibleCount() => toolCollectibleCounter;
 }
