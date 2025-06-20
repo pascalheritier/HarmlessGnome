@@ -23,4 +23,6 @@ public class LevelToolSpawner : MonoBehaviour
         for (int i = 0; i < toolCollectibles.Count; i++)
             toolCollectibles[i].transform.position = shuffledLocations[i].transform.position;
     }
+
+    public int GetToolCollectibleTotalCount() => toolCollectibles.Count();
 }
