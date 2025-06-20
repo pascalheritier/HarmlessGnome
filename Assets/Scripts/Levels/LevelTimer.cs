@@ -45,7 +45,7 @@ public class LevelTimer : MonoBehaviour
         if (!isEnabled || IsTimeUp)
             return;
 
-        if (timerCountDown.TotalSeconds == 0)
+        if (timerCountDown.TotalSeconds <= 0)
         {
             if (stopWatch.IsRunning)
                 stopWatch.Stop();

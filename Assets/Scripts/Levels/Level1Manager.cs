@@ -1,10 +1,14 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Level1Manager : MonoBehaviour
 {
     [SerializeField]
     private AudioClip victorySound;
+
+    [SerializeField]
+    private TextMeshProUGUI victoryMessage;
 
     [SerializeField]
     private LevelTimer levelTimer;
@@ -22,6 +26,8 @@ public class Level1Manager : MonoBehaviour
         $"The only thing I need right now are my {levelToolSpawner.GetToolCollectibleTotalCount()} gardening tools, let's find them quickly before this garden gets out of hand.",
         "Keyboard: WASD | Xbox controller: Joystick"
     };
+
+    private string GetLevelEndingMessage() => $"Congratulations, you have now completed this level and found {playerCollect.GetCurrentToolCollectibleCount()} tool(s) that you can now use harmlessely.";
 
     private void Awake()
     {
@@ -52,10 +58,13 @@ public class Level1Manager : MonoBehaviour
 
     private void ManageGameEnding()
     {
+        if (uiManager.IsGameEndingScreenShowing())
+            return;
         if (uiManager.IsDialogeBoxShowing())
             return; // wait until dialogbox is closed to show other screens
         levelTimer.enabled = false;
         SoundManager.Instance.PlaySound(victorySound);
+        victoryMessage.text = GetLevelEndingMessage();
         StartCoroutine(ShowGameEnding());
     }
 

@@ -202,6 +202,11 @@ public class UIManager : MonoBehaviour
         return gameOverScreen.activeInHierarchy;
     }
 
+    public bool IsGameEndingScreenShowing()
+    {
+        return gameEndScreen.activeInHierarchy;
+    }
+
     public bool IsDialogeBoxShowing()
     {
         return dialogueBox.activeInHierarchy;
