@@ -3119,11 +3119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea6275234d15dd4fb7aaf1c42fe9f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followPlayer: 0
   speed: 0.5
-  playerTransform: {fileID: 0}
-  aheadDistance: 2
-  speedFollowingPlayer: 0.5
 --- !u!1 &4449320032124478439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3709,7 +3705,6 @@ GameObject:
   - component: {fileID: 8542940012786012235}
   - component: {fileID: 4531653938166662554}
   - component: {fileID: 4581585155788539485}
-  - component: {fileID: 6707955177963620165}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -3836,20 +3831,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &6707955177963620165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5342806756649223644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25ccdbdd2e23d8b40a213c9dd63af73d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 4581585155788539485}
-  timerSeconds: 0
 --- !u!1 &5421906807328216118
 GameObject:
   m_ObjectHideFlags: 0

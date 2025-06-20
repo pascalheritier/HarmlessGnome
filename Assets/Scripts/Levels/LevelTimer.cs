@@ -36,6 +36,7 @@ public class LevelTimer : MonoBehaviour
     {
         timerDuration = TimeSpan.FromMilliseconds(timerSeconds * 1000);
         timerCountDown = new TimeSpan(timerDuration.Ticks);
+        timerText.text = $"{timerCountDown.ToString("mm\\:ss")}";
         stopWatch = Stopwatch.StartNew();
     }
 
