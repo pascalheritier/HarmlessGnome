@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2074688496165008839}
   m_Layer: 0
   m_Name: Shovel
-  m_TagString: Untagged
+  m_TagString: ToolCollectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
