@@ -4,6 +4,7 @@
     {
         public const string TransitionMoving = "moving";
         public const string TransitionMovingDirection = "moving-direction";
+        public const string TransitionAttacking = "attacking";
     }
     internal class ElementWithHealth
     {

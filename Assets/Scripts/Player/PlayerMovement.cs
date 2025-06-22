@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     private Animator playerAnimator;
     private Rigidbody2D playerBody;
-    private bool playerControlsEnabled = true;
     private Vector2 motionDirection;
 
     private void Awake()
@@ -27,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnMove(CallbackContext context)
     {
-        if (!playerControlsEnabled && !context.canceled) // always get key up, to stop motion even after disabling it
+        if (!enabled && !context.canceled) // always get key up, to stop motion even after disabling it
             return;
 
         if (context.canceled)

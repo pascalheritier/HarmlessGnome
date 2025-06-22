@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 8911189205571976949}
   - component: {fileID: 9078065362700000155}
   - component: {fileID: 8490473835796958614}
+  - component: {fileID: 2208522954837395958}
+  - component: {fileID: 727658070962007029}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -305,3 +307,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPickupSound: {fileID: 8300000, guid: 12200a057acd07e41a04ecb8e976df3a, type: 3}
+--- !u!114 &2208522954837395958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4683260644411124993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e711be2859cab7944bcf1f1b5e67574d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+--- !u!114 &727658070962007029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4683260644411124993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47bbb3e1425e964c8ed7fdde42b5862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
